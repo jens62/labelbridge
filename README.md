@@ -6,9 +6,11 @@ Brother does not offer macOS support for the PT-2100: there is no Mac driver, an
 P-touch Editor for Mac does not list the printer. This project makes the printer
 usable on a Mac, so that a device that works fine is not thrown away.
 
-Status: experimental, one developer, one printer. A test label has been printed
-from P-touch Editor 5.3.24 on an Apple Silicon Mac using approach 1 below.
-Approach 2 is not working yet. Not affiliated with Brother.
+Status: experimental, one developer, one printer. On an Apple Silicon Mac,
+P-touch Editor 5.3.24 prints a test label and its media check detects the
+inserted 6 mm laminated tape, using approach 1 below. Other tape widths and
+cutting have not been tested. Approach 2 is not working yet. Not affiliated with
+Brother.
 
 ## The problem
 
@@ -17,8 +19,8 @@ It opens USB printers itself, through the IOKit USB interfaces, and offers only
 the models in a list built into the app. A driver, a PPD file or a CUPS backend
 therefore cannot add a printer to it. The PT-2100 itself speaks the same raster
 command set as models Editor already supports (it identifies as `CMD:PT-CBP`).
-So far, only the model check has stood in the way; the detection of the inserted
-tape has not been tested yet.
+So far, only the model check has stood in the way: with it out of the way,
+printing works and Editor's media check detects the inserted tape correctly.
 
 ## What the project does
 
